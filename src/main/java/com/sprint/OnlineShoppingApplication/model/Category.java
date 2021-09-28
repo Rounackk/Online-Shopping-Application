@@ -9,6 +9,6 @@ import javax.persistence.Id;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String catId;
+    private Integer catId;
     private String categoryName;
 }

@@ -1,20 +1,23 @@
 package com.sprint.OnlineShoppingApplication.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
-//@NoArgsConstructor
+@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String customerId;
+    private Integer customerId;
     private String firstName;
     private String lastName;
     private String mobileNumber;
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @OneToOne
     @JoinColumn(name = "addressId_fk", referencedColumnName = "addressId")
     private Address address;
 

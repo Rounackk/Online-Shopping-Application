@@ -13,7 +13,7 @@ import java.util.Map;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String cartId;
+    private Integer cartId;
 
     @OneToOne(targetEntity = Customer.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "customerId_fk", referencedColumnName = "customerId")

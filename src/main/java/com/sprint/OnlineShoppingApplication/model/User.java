@@ -1,16 +1,17 @@
 package com.sprint.OnlineShoppingApplication.model;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @Entity
-//@NoArgsConstructor
 @Table(name = "User_type")
 public class User {
     @Id
-    private String userId;
-    private String Password;
+    private Integer userId;
+    private String password;
     private String role;
 
     @OneToOne(targetEntity = Customer.class, cascade = CascadeType.ALL)

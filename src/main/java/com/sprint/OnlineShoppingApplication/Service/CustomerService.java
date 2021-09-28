@@ -1,17 +1,21 @@
 package com.sprint.OnlineShoppingApplication.Service;
 
+import com.sprint.OnlineShoppingApplication.Dto.CustomerDto;
+import com.sprint.OnlineShoppingApplication.Exception.AddressNotFoundException;
+import com.sprint.OnlineShoppingApplication.Exception.CustomerNotFoundException;
 import com.sprint.OnlineShoppingApplication.model.Customer;
 
 import java.util.List;
 
 public interface CustomerService {
-    public Customer addCustomer(Customer cust);
+    public Customer addCustomer(CustomerDto cust);
 
-    public Customer updatCustomer(Customer cust);
+    public Customer updateCustomer(CustomerDto cust) throws CustomerNotFoundException, AddressNotFoundException;
 
-    public Customer removeCustomer(Customer cust);
 
-    public Customer viewCustomer(Customer cust);
+    public Integer removeCustomer(Integer customerId) throws CustomerNotFoundException;
 
-    public List<Customer> viewAllCustomer(String location);
+    public Customer viewCustomer(Integer customerId);
+
+    public List<Customer> viewAllCustomer(String location) throws CustomerNotFoundException;
 }
